@@ -1,5 +1,5 @@
 package exercise8;
-
+import java.util.Scanner;
 public class Point {
     double x;
     double y;
@@ -10,19 +10,20 @@ public class Point {
     }
 
     public Point(double x, double y) {
-        this.x = x;
-        this.y = y;
+      this.x = x;
+      this.y = y;
     }
 
     public Point(Point otherPoint) {
-        this.x = otherPoint.y;
-        this.y = otherPoint.y;
+       x = otherPoint.x;
+       y = otherPoint.y;
     }
 
     public void initialize() {
+        Scanner input = new Scanner(System.in);
+        x = input.nextDouble();
+         y = input.nextDouble();
 
-        x = Utils.INPUT.nextDouble();
-        y = Utils.INPUT.nextDouble();
     }
 
     public void translate(double xDelta, double yDelta) {
@@ -37,12 +38,13 @@ public class Point {
     }
 
     public boolean equals(Point otherPoint) {
-        boolean xEquals = Utils.equals(x, otherPoint.x);
-        boolean yEquals = Utils.equals(y, otherPoint.y);
-        return xEquals && yEquals;
+       boolean xEqual = Utils.equals(x, otherPoint.x);
+       boolean yEqual = Utils.equals(y, otherPoint.y);
+        return xEqual && yEqual;
     }
 
     public String toString() {
-        return "(" + this.x + ", " + this.y +")";
+        
+        return "(" + x + ", " + y + ")";
     }
 }
